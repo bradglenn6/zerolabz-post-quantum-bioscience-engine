@@ -1,6 +1,6 @@
 ﻿import { guardianRouter } from "./src/routes/guardian.routes";
 import express, { Request, Response } from 'express';
-import { createServer as createViteServer } from 'vite';
+// vite imported dynamically in dev mode
 import dotenv from 'dotenv';
 import path from 'path';
 import crypto from 'crypto';
@@ -11,7 +11,7 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 app.use("/api/guardian", guardianRouter);
-const PORT = 3000;
+const PORT = Number(process.env.PORT) || 8080;
 
 app.use(express.json({ limit: '15mb' }));
 
@@ -393,6 +393,7 @@ async function startServer() {
       res.sendFile(path.resolve(process.cwd(), 'dist', 'index.html'));
     });
   } else {
+    const { createServer: createViteServer } = await import('vite');
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: 'spa',
@@ -406,4 +407,5 @@ async function startServer() {
 }
 
 startServer();
+
 

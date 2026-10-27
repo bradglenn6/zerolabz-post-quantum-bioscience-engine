@@ -1,11 +1,11 @@
-{
+﻿{
   "name": "react-example",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "tsx server.ts",
-    "build": "vite build && esbuild server.ts --platform=node --format=esm --outdir=dist",
+    "build": "vite build && esbuild server.ts --bundle --platform=node --packages=external --format=esm --outdir=dist",
     "start": "node dist/server.js",
     "preview": "vite preview",
     "clean": "rm -rf dist server.js",
@@ -39,3 +39,4 @@
     "viem": "^2.57.7"
   }
 }
+
