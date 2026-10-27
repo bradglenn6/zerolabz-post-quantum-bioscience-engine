@@ -1,0 +1,6 @@
+{
+  "name": "ZeroLabz Post-Quantum Bioscience Engine",
+  "description": "Stateless, serverless research engine utilizing ZeroLabz Post-Quantum cryptography, mixed-methods bioscience analytics, real-time 3D molecular visualization, multi-factor authentication, and compliance audit logging.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
