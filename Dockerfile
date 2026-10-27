@@ -1,15 +1,14 @@
-﻿FROM node:20-bookworm-slim
+﻿FROM node:20-slim AS builder
 WORKDIR /app
-
 COPY package*.json ./
-RUN npm install --legacy-peer-deps
+RUN npm install
+COPY . .
+RUN npm run build
 
-COPY server.ts ./
-COPY registration-result.json ./
-COPY src/ ./src/
+FROM node:20-slim
+WORKDIR /app
+RUN npm install -g serve
+COPY --from=builder /app/dist /app/dist
 
-ENV PORT=8080
-ENV NODE_ENV=production
 EXPOSE 8080
-
-CMD ["npx", "tsx", "server.ts"]
+CMD ["serve", "-s", "dist", "-l", "8080"]
