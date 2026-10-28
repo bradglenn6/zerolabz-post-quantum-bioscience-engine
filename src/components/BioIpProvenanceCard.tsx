@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { 
   CheckCircle2, 
   ExternalLink, 
@@ -80,7 +80,7 @@ export const BioIpProvenanceCard: React.FC = () => {
           </div>
           <div className="pt-1 flex items-center gap-3">
             <a
-              href="https://aeneid.explorer.story.foundation/ipa/0x93762D496ffBae7aC9834047CB2C5A44958B7400"
+              href="/api/guardian/explorer/ipa/0x93762D496ffBae7aC9834047CB2C5A44958B7400"
               target="_blank"
               rel="noreferrer"
               className="text-[11px] text-sky-700 hover:text-sky-900 font-semibold flex items-center gap-1 underline"
@@ -90,7 +90,7 @@ export const BioIpProvenanceCard: React.FC = () => {
             </a>
             <span className="text-slate-300">·</span>
             <a
-              href="https://aeneid.storyscan.io/tx/0xe3b5395274f7cbed898ea8982014d103605df3ee808c2aa127b61a854317c430"
+              href="/api/guardian/explorer/tx/0xe3b5395274f7cbed898ea8982014d103605df3ee808c2aa127b61a854317c430"
               target="_blank"
               rel="noreferrer"
               className="text-[11px] text-sky-700 hover:text-sky-900 font-semibold flex items-center gap-1 underline"
