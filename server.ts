@@ -1,4 +1,4 @@
-﻿import { guardianRouter } from "./src/routes/guardian.routes";
+import { guardianRouter } from "./src/routes/guardian.routes";
 import express, { Request, Response } from 'express';
 // vite imported dynamically in dev mode
 import dotenv from 'dotenv';
