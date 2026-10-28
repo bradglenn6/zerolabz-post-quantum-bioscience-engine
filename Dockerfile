@@ -10,8 +10,9 @@ WORKDIR /app
 ENV NODE_ENV=production
 ENV PORT=8080
 COPY package*.json ./
-RUN npm install --omit=dev --legacy-peer-deps
+COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/registration-result.json ./registration-result.json
 
 EXPOSE 8080
 CMD ["node", "dist/server.js"]
